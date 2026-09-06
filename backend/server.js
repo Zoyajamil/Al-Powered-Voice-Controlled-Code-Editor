@@ -15,7 +15,10 @@ app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
 // Initialize OpenAI
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({
+  apiKey: process.env.GROQ_API_KEY,
+  baseURL: "https://api.groq.com/openai/v1",
+});
 
 // ✅ Health check route
 app.get("/", (req, res) => res.send("✅ Backend is running"));
@@ -29,7 +32,7 @@ app.post("/ai-command", async (req, res) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4.1-mini",
+      model: "llama-3.3-70b-versatile",
       messages: [
         {
           role: "system",
