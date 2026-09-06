@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const checkBackend = async () => {
       try {
-        const res = await fetch("https://ai-powered-voice-controlled-code-editor.onrender.com");
+        const res = await fetch("https://al-powered-voice-controlled-code-editor.onrender.com");
         const text = await res.text();
         if (text.includes("Backend is running")) setBackendStatus("🟢 Online");
         else setBackendStatus("🟠 Unstable");
