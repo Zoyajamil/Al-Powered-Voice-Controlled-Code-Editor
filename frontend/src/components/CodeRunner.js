@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Editor from "@monaco-editor/react";
 import VoiceControl from "./VoiceControl";
 
-const API_URL = "https://ai-code-editor-tya1.onrender.com";
+const API_URL = "https://ai-powered-voice-controlled-code-editor.onrender.com";
 
 const CodeRunner = ({
   code,
